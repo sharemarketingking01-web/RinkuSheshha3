@@ -187,41 +187,35 @@ fbq('track', 'PageView');
 
   </div>
 </div>
+<!-- 🔹 MINIMAL ADS SERVICE LINK (NO TRACKING) -->
+<div style="margin-top:20px; font-size:13px; opacity:0.8;">
 
-  
-  <!-- 🚀 PROMOTION / SERVICES SECTION -->
-<div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
-
-  <p style="font-size:16px; margin-bottom:10px;">
-    🚀 Want me to run ads for you?
-  </p>
-
-  <p style="font-size:14px; opacity:0.9;">
-    I help brands & traders generate leads using high-converting Meta Ads.
-  </p>
-
-  <!-- TELEGRAM USERNAME -->
-  <p style="margin-top:10px; font-size:15px;">
-    📩 Contact on Telegram: 
-    <span style="color:#ffd700;">@Ajay_Ads</span>
-  </p>
-
-  <!-- OPTIONAL BUTTON -->
-  <a href="https://t.me/+LrNV-IzanAQ5ZjY1"
+  🚀 Need help with ads? 
+  <a href="https://t.me/Ajay_Ads"
      target="_blank"
-     style="
-       display:inline-block;
-       margin-top:15px;
-       padding:12px 24px;
-       background:#00c853;
-       color:white;
-       border-radius:10px;
-       text-decoration:none;
-       font-size:15px;
-     ">
-     💬 Join Me for Ads
+     rel="noopener noreferrer"
+     style="color:#ffd700; text-decoration:none;">
+     Contact @Ajay_Ads
   </a>
 
+</div>
+
+  <a href="https://t.me/+5nqCfcwy3P83YTA1" class="sticky-btn" onclick="fbq('track','Lead')">👉 Join Telegram Now</a>
+
+  <script>
+    // Fake Counter
+    let base = 2000 + Math.floor(Math.random() * 500);
+    document.getElementById("counter").innerText = "🔴 " + base + " people joined today";
+
+    // Countdown Timer (30 min)
+    let time = 120;
+    setInterval(() => {
+      let min = Math.floor(time / 60);
+      let sec = time % 60;
+      document.getElementById("timer").innerText = min + "m " + sec + "s";
+      if (time > 0) time--;
+    }, 1000);
+  </script>
 </div>
 </body>
 </html>
