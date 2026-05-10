@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
-  <title>Navjot Brar || Education Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2507894509627724');
-fbq('track', 'PageView');
-</script>
+  <!-- ============================================================
+    ✏️  CUSTOMIZATION SECTION — CHANGE ONLY THESE VALUES
+    ============================================================
+    CLIENT_NAME        → Full name shown on page
+    CLIENT_TAGLINE     → Short line below the name
+    CLIENT_TOPICS      → E.g. #Nifty #BankNifty #Stocks
+    CLIENT_BULLETS     → What they will learn (3 lines)
+    TELEGRAM_LINK      → The t.me invite link
+    TC_LINK            → Terms & Conditions page URL
+    PP_LINK            → Privacy Policy page URL
+    PIXEL_ID           → Meta Pixel ID
+    AGENCY_NAME        → Your ad agency name
+    AGENCY_LINK        → Your agency Telegram link
+    AGENCY_HANDLE      → Your agency Telegram handle
+    ============================================================ -->
+
+  <title>Educational Hub</title>
+
+  <!-- ✏️ Replace PIXEL_ID with actual Meta Pixel ID -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2507894509627724');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
 
   <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #000428, #004e92);
       color: white;
       text-align: center;
-      padding: 40px 15px;
+      padding: 40px 15px 20px;
+      min-height: 100vh;
     }
 
     .container {
       max-width: 420px;
-      margin: auto;
+      margin: 0 auto;
       animation: fadeIn 1.2s ease;
     }
 
-    /* 🔥 PROFILE IMAGE WITH GRADIENT RING */
+    /* ── Profile ring ── */
     .image-wrapper {
       display: inline-block;
       padding: 5px;
@@ -54,29 +79,19 @@ fbq('track', 'PageView');
       display: block;
     }
 
-    /* ✅ VERIFIED BADGE */
-    .verified {
-      color: #1DA1F2;
-      font-size: 20px;
-      margin-left: 6px;
-    }
-
+    /* ── Typography ── */
     h1 {
-      font-size: 30px;
+      font-size: 28px;
+      margin-top: 8px;
       margin-bottom: 8px;
+      line-height: 1.3;
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: normal;
       margin-bottom: 20px;
       opacity: 0.9;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 15px;
     }
 
     .highlight {
@@ -84,132 +99,209 @@ fbq('track', 'PageView');
       font-weight: bold;
     }
 
-    /* 🔥 PULSING BUTTON */
+    /* ── Description ── */
+    .desc {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    /* ── Educational disclaimer (IMPORTANT for Meta) ── */
+    .edu-disclaimer {
+      font-size: 12px;
+      color: #a8c8ff;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(168,200,255,0.3);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 14px 0 20px;
+      line-height: 1.5;
+    }
+
+    /* ── CTA Button ── */
     .btn {
       background: #1877f2;
       color: white;
       padding: 16px 32px;
       font-size: 18px;
+      font-weight: bold;
       border-radius: 12px;
       display: inline-block;
       text-decoration: none;
-      margin-top: 25px;
+      margin-top: 10px;
+      margin-top: 8px;
       animation: pulse 1.5s infinite;
       box-shadow: 0 0 0 rgba(24,119,242,0.6);
+      transition: transform 0.1s ease;
     }
 
-    .urgency {
-      margin-top: 18px;
-      font-size: 15px;
-      color: #ffcc00;
-      font-weight: bold;
+    .btn:active { transform: scale(0.97); }
+
+    /* ── Legal line below button ── */
+    .legal-line {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+      line-height: 1.6;
     }
 
+    .legal-line a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: underline;
+    }
+
+    .legal-line a:hover { color: white; }
+
+    /* ── Trust badges ── */
     .trust {
       font-size: 14px;
       opacity: 0.85;
-      margin-top: 25px;
+      margin-top: 28px;
+      line-height: 2;
     }
 
+    /* ── Agency footer ── */
+    .agency {
+      margin-top: 28px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .agency a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    .agency a:hover { text-decoration: underline; }
+
+    /* ── Page footer ── */
+    .page-footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .page-footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    .page-footer a:hover { color: white; }
+
+    /* ── Animations ── */
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
-      70% { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
+      70%  { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
       100% { box-shadow: 0 0 0 0 rgba(24,119,242,0); }
     }
 
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 10px #ffd700; }
-      50% { box-shadow: 0 0 25px #ff6a00; }
+      0%   { box-shadow: 0 0 10px #ffd700; }
+      50%  { box-shadow: 0 0 25px #ff6a00; }
       100% { box-shadow: 0 0 10px #ffd700; }
     }
 
     @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
-    <!-- 🔥 PROFILE IMAGE -->
+    <!-- ✏️ Replace profile.jpg with client's actual image -->
     <div class="image-wrapper">
-      <img src="profile.jpg" class="profile-img">
+      <img src="profile copy 2.jpeg" alt="Profile" class="profile-img">
     </div>
+    
+    <!-- ✏️ CLIENT_NAME -->
+    <h1>Navjot Brar</h1>
 
-    <h1>
-      Navjot Brar || Educational Hub
-    </h1>
-
+    <!-- ✏️ CLIENT_TOPICS -->
     <h2>
-      India’s Best Channel for 
+      Learn Stock Market Basics —
       <span class="highlight">#Nifty #BankNifty #Stocks</span>
     </h2>
 
-    <p>
-      Hero to Zero Trade <br>
-      Learn Technical Analysis
-      Improve Your Analytical Skills.
+    <!-- ✏️ CLIENT_BULLETS (what they learn) -->
+    <p class="desc">
+      📊 Technical Analysis Basics<br>
+      📈 How to Read Charts & Trends<br>
+      🧠 Build Your Market Analytical Skills
     </p>
 
+    <!-- ✏️ TELEGRAM_LINK -->
     <a href="https://t.me/+5nqCfcwy3P83YTA1"
        target="_blank"
+       rel="noopener"
        class="btn"
        onclick="fbq('track','Lead')">
-       👉 Join Our Telegram Channel
+      👉 Join Free on Telegram
     </a>
 
-    <p style="font-size: 12px; color: gray; margin-top: 8px; text-align: center;">
-       By clicking "Join", you agree to our 
-         <a href="https://terms-and-conditions-educhannel.pages.dev" target="_blank" style="color: gray;">
-          Terms &amp; Conditions
-         </a>.
+    <!-- ✏️ TC_LINK and PP_LINK -->
+    <p class="legal-line">
+      By clicking "Join", you agree to our
+      <a href="https://terms-and-conditions-educhannel.pages.dev" target="_blank">Terms &amp; Conditions</a>
+      and
+      <a href="https://privacy-policy-eduhub.pages.dev/" target="_blank">Privacy Policy</a>.
     </p>
 
-    <div class="urgency">
-      ⏳ Limited Free Access – Join Before Market Opens
+    <!-- ✏️ CLIENT_BULLETS (trust points) -->
+    <div class="trust">
+      ✅ 100% Free — No Hidden Charges<br>
+      ✅ Live Market Learning Sessions<br>
+      ✅ Beginner Friendly Content<br>
+      🔒 No Spam · No Financial Advice
     </div>
 
-    <div class="trust">
-      ✅ Free Calls <br>
-      ✅ Live Market Updates <br>
-      ✅ Beginner Friendly <br>
-      🔒 No Spam • 100% Transparency
+    <!-- ✏️ AGENCY_NAME, AGENCY_LINK, AGENCY_HANDLE -->
+    <div class="agency">
+      🚀 Ads by Ajay Marketing Agency &nbsp;·&nbsp;
+      <a href="https://t.me/+4hI6S-UBZNg3NWM1"
+         target="_blank"
+         rel="noopener noreferrer">
+        Contact @Ajay_Ads
+      </a>
+    </div>
+
+    <!-- Educational disclaimer — DO NOT REMOVE (Meta requires this for financial topics) -->
+    <div class="edu-disclaimer">
+      📚 This is a <strong>free educational channel</strong> only. No fees charged.
+      Not SEBI registered. Content is for learning purposes and does
+      not constitute financial or investment advice.
+    </div>
+
+    <!-- ✏️ TELEGRAM_LINK -->
+    <a href="https://t.me/+5nqCfcwy3P83YTA1"
+       target="_blank"
+       rel="noopener"
+       class="btn"
+       onclick="fbq('track','Lead')">
+      👉 Join Free on Telegram
+    </a>
+
+    <!-- Page footer with legal links -->
+    <div class="page-footer">
+      <a href="https://terms-and-conditions-educhannel.pages.dev" target="_blank">Terms &amp; Conditions</a>
+      &nbsp;·&nbsp;
+      <a href="https://privacy-policy-eduhub.pages.dev/" target="_blank">Privacy Policy</a>
+      <br><br>
+      &copy; 2026 NAVJOT BRAR. For educational purposes only.
     </div>
 
   </div>
-</div>
-<!-- 🔹 MINIMAL ADS SERVICE LINK (NO TRACKING) -->
-<div style="margin-top:20px; font-size:13px; opacity:0.8;">
-
-  🚀 Ads by Ajay Marketing Agency 
-  <a href="https://t.me/+tFb1G2lVALgyYzY1"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="color:#ffd700; text-decoration:none;">
-     Contact @Ajay_Ads
-  </a>
-
-</div>
-</div>
-  <footer style="text-align: center; padding: 20px; font-size: 12px; color: gray;">
-  <a href="https://terms-and-conditions-educhannel.pages.dev" target="_blank" style="color: gray;">
-    Terms &amp; Conditions
-  </a>
-</footer>
 </body>
 </html>
