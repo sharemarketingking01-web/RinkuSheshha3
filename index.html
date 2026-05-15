@@ -1,264 +1,338 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
+  <title>tsaheylu creatives</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ============================================================
-    ✏️  CUSTOMIZATION SECTION — CHANGE ONLY THESE VALUES
-    ============================================================
-    CLIENT_NAME        → Full name shown on page
-    CLIENT_TAGLINE     → Short line below the name
-    CLIENT_TOPICS      → E.g. #Nifty #BankNifty #Stocks
-    CLIENT_BULLETS     → What they will learn (3 lines)
-    TELEGRAM_LINK      → The t.me invite link
-    TC_LINK            → Terms & Conditions page URL
-    PP_LINK            → Privacy Policy page URL
-    PIXEL_ID           → Meta Pixel ID
-    AGENCY_NAME        → Your ad agency name
-    AGENCY_LINK        → Your agency Telegram link
-    AGENCY_HANDLE      → Your agency Telegram handle
-    ============================================================ -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-  <title>Educational Hub</title>
-
-  <!-- ✏️ Replace PIXEL_ID with actual Meta Pixel ID -->
+  <!-- Meta Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '975014378408919');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '975014378408919');
+  fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/>
+    src="https://www.facebook.com/tr?id=1660844118570840&ev=PageView&noscript=1"/>
   </noscript>
 
   <style>
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg-dark:    #060d1a;
+      --bg-card:    #0d1b2e;
+      --accent:     #00c6ff;
+      --gold:       #f5c518;
+      --text-main:  #eef2f7;
+      --text-muted: #8899aa;
+      --border:     rgba(0,198,255,0.15);
+    }
+
     body {
-      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #000428, #004e92);
-      color: white;
-      text-align: center;
-      padding: 40px 15px 20px;
+      color: var(--text-main);
+      font-family: 'DM Sans', sans-serif;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
     }
 
-    .container {
+    /* subtle background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,198,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,198,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
       max-width: 420px;
-      margin: 0 auto;
-      animation: fadeIn 1.2s ease;
+      width: 100%;
+      padding: 40px 32px 36px;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(0,198,255,0.07);
+      animation: fadeUp 0.8s ease both;
     }
 
-    /* ── Profile ring ── */
-    .image-wrapper {
+    /* profile ring */
+    .avatar-ring {
       display: inline-block;
-      padding: 5px;
+      padding: 3px;
       border-radius: 50%;
-      background: linear-gradient(45deg, #ffd700, #ff6a00, #ffd700);
-      background-size: 200% 200%;
-      animation: gradientMove 3s ease infinite, glowPulse 2s infinite;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--gold), var(--accent));
+      margin-bottom: 22px;
     }
 
-    .profile-img {
-      width: 160px;
-      height: 160px;
+    .avatar-ring img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
+      border: 3px solid var(--bg-card);
     }
 
-    /* ── Typography ── */
-    h1 {
-      font-size: 28px;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      line-height: 1.3;
+    /* brand name */
+    .brand {
+      font-family: 'Sora', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
     }
 
-    h2 {
-      font-size: 17px;
-      font-weight: normal;
-      margin-bottom: 20px;
-      opacity: 0.9;
+    .brand span {
+      color: var(--accent);
     }
 
-    .highlight {
-      color: #ffd700;
-      font-weight: bold;
+    /* tag line */
+    .tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
     }
 
-    /* ── Description ── */
-    .desc {
+    /* divider */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      border-radius: 2px;
+      margin: 0 auto 24px;
+    }
+
+    /* features */
+    .features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
       font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 10px;
-      opacity: 0.95;
+      line-height: 1.4;
     }
 
-    /* ── Educational disclaimer (IMPORTANT for Meta) ── */
-    .edu-disclaimer {
-      font-size: 12px;
-      color: #a8c8ff;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(168,200,255,0.3);
+    .features li .icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(0,198,255,0.1);
+      border: 1px solid rgba(0,198,255,0.2);
       border-radius: 8px;
-      padding: 10px 14px;
-      margin: 14px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .features li strong {
+      display: block;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .features li span {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* CTA button */
+    .cta-btn {
+      display: block;
+      background: linear-gradient(135deg, #0088cc, #00c6ff);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-bottom: 16px;
+      box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.7);
+      animation: pulse-blue 2s infinite;
+      transition: transform 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      animation: none;
+      box-shadow: 0 8px 32px rgba(0,198,255,0.45);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    @keyframes pulse-blue {
+      0%   { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.7); }
+      70%  { box-shadow: 0 0 0 16px rgba(0, 198, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
+    }
+
+    /* trust badges */
+    .trust {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .trust-badge {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .trust-badge::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* disclaimer */
+    .disclaimer {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 24px;
+      text-align: left;
+    }
+
+    /* footer links */
+    .footer-links {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .consent {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 10px;
       line-height: 1.5;
     }
 
-    /* ── CTA Button ── */
-    .btn {
-      background: #1877f2;
-      color: white;
-      padding: 16px 32px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 12px;
-      display: inline-block;
-      text-decoration: none;
-      margin-top: 10px;
-      margin-top: 8px;
-      animation: pulse 1.5s infinite;
-      box-shadow: 0 0 0 rgba(24,119,242,0.6);
-      transition: transform 0.1s ease;
-    }
-
-    .btn:active { transform: scale(0.97); }
-
-    /* ── Legal line below button ── */
-    .legal-line {
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    .legal-line a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: underline;
-    }
-
-    .legal-line a:hover { color: white; }
-
-    /* ── Trust badges ── */
-    .trust {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-top: 28px;
-      line-height: 2;
-    }
-
-    /* ── Agency footer ── */
-    .agency {
-      margin-top: 28px;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-
-    .agency a {
-      color: #ffd700;
+    .consent a {
+      color: var(--accent);
       text-decoration: none;
     }
 
-    .agency a:hover { text-decoration: underline; }
-
-    /* ── Page footer ── */
-    .page-footer {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .page-footer a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      margin: 0 6px;
-    }
-
-    .page-footer a:hover { color: white; }
-
-    /* ── Animations ── */
-    @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
-      70%  { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
-      100% { box-shadow: 0 0 0 0 rgba(24,119,242,0); }
-    }
-
-    @keyframes glowPulse {
-      0%   { box-shadow: 0 0 10px #ffd700; }
-      50%  { box-shadow: 0 0 25px #ff6a00; }
-      100% { box-shadow: 0 0 10px #ffd700; }
-    }
-
-    @keyframes gradientMove {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
 
-    <!-- ✏️ Replace profile.jpg with client's actual image -->
-    <div class="image-wrapper">
-      <img src="profile.jpg" alt="Profile" class="profile-img">
-    </div>
-    
-    <!-- ✏️ CLIENT_NAME -->
-    <h1>Navjot Brar</h1>
+<div class="card">
 
-    <!-- ✏️ CLIENT_TOPICS -->
-    <h2>
-      Learn Stock Market Basics<br>
-      <span class="highlight">#Nifty #BankNifty #Stocks</span>
-    </h2>
-
-    <!-- ✏️ CLIENT_BULLETS (what they learn) -->
-    <p class="desc">
-      📊 Technical Analysis Basics<br>
-      📈 How to Read Charts & Trends<br>
-      🧠 Build Your Market Analytical Skills
-    </p>
-
-    <!-- ✏️ TELEGRAM_LINK -->
-    <a href="https://t.me/+KJBIpnqfc6kwZmRl"
-       target="_blank"
-       rel="noopener"
-       class="btn"
-       onclick="fbq('track','Subscribe')">
-      👉 Join Free on Telegram
-    </a>
-
-    <div class="trust">
-      ✅ 100% Free — No Hidden Charges<br>
-      ✅ Live Market Learning Sessions<br>
-      ✅ Beginner Friendly Content<br>
-      🔒 No Spam · No Financial Advice
-    </div>
-
-
+  <!-- Profile -->
+  <div class="avatar-ring">
+    <img src="profile.jpg" alt="Index Insight Hub">
   </div>
+
+  <!-- Brand -->
+  <div class="brand">Market<span>Insights</span></div>
+  <div class="tagline">Stock Market Education</div>
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <ul class="features">
+    <li>
+      <div class="icon">📊</div>
+      <div>
+        <strong>Technical Analysis</strong>
+        <span>Learn to read charts and understand price movements</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">📈</div>
+      <div>
+        <strong>Nifty & BankNifty Education</strong>
+        <span>Daily market breakdowns explained simply</span>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🧠</div>
+      <div>
+        <strong>Build Analytical Skills</strong>
+        <span>Beginner-friendly content with no jargon</span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- CTA -->
+  <a href="https://t.me/+KJBIpnqfc6kwZmRl"
+     target="_blank"
+     class="cta-btn"
+     onclick="fbq('track','Subscribe')">
+     Join Our Learning Community
+  </a>
+
+
+  <!-- Trust badges -->
+  <div class="trust">
+    <span class="trust-badge">No Hidden Fees</span>
+    <span class="trust-badge">Beginner Friendly</span>
+    <span class="trust-badge">No Spam</span>
+  </div>
+
+</div>
+
 </body>
 </html>
