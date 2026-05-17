@@ -5,325 +5,198 @@
   <title>Navjot Brar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Meta Pixel -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '975014378408919');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '975014378408919');
+    fbq('track', 'PageView');
   </script>
   <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1660844118570840&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=1440528827721506&ev=PageView&noscript=1" />
   </noscript>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg-dark:    #060d1a;
-      --bg-card:    #0d1b2e;
-      --accent:     #00c6ff;
-      --gold:       #f5c518;
-      --text-main:  #eef2f7;
-      --text-muted: #8899aa;
-      --border:     rgba(0,198,255,0.15);
-    }
-
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #000428, #004e92);
-      color: var(--text-main);
-      font-family: 'DM Sans', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 16px;
-    }
-
-    /* subtle background grid */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,198,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,198,255,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .card {
-      position: relative;
-      z-index: 1;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      max-width: 420px;
-      width: 100%;
-      padding: 40px 32px 36px;
+      color: white;
       text-align: center;
-      box-shadow: 0 0 60px rgba(0,198,255,0.07);
-      animation: fadeUp 0.8s ease both;
+      padding: 40px 15px;
     }
 
-    /* profile ring */
-    .avatar-ring {
+    .container {
+      max-width: 420px;
+      margin: auto;
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* 🔥 PROFILE IMAGE WITH GRADIENT RING */
+    .image-wrapper {
       display: inline-block;
-      padding: 3px;
+      padding: 5px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--accent));
-      margin-bottom: 22px;
+      background: linear-gradient(45deg, #ffd700, #ff6a00, #ffd700);
+      background-size: 200% 200%;
+      animation: gradientMove 3s ease infinite, glowPulse 2s infinite;
+      margin-bottom: 20px;
     }
 
-    .avatar-ring img {
-      width: 120px;
-      height: 120px;
+    .profile-img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      border: 3px solid var(--bg-card);
     }
 
-    /* brand name */
-    .brand {
-      font-family: 'Sora', sans-serif;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
+    /* ✅ VERIFIED BADGE */
+    .verified {
+      color: #1DA1F2;
+      font-size: 20px;
+      margin-left: 6px;
     }
 
-    .brand span {
-      color: var(--accent);
+    h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
     }
 
-    /* tag line */
-    .tagline {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 24px;
+    h2 {
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 20px;
+      opacity: 0.9;
     }
 
-    /* divider */
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--gold));
-      border-radius: 2px;
-      margin: 0 auto 24px;
-    }
-
-    /* features */
-    .features {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
-      line-height: 1.4;
-    }
-
-    .features li .icon {
-      width: 32px;
-      height: 32px;
-      background: rgba(0,198,255,0.1);
-      border: 1px solid rgba(0,198,255,0.2);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    p {
       font-size: 16px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .features li strong {
-      display: block;
-      color: var(--text-main);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .features li span {
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    /* CTA button */
-    .cta-btn {
-      display: block;
-      background: linear-gradient(135deg, #0088cc, #00c6ff);
-      color: #fff;
-      font-family: 'Sora', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 16px 24px;
-      border-radius: 14px;
-      text-decoration: none;
-      margin-bottom: 16px;
-      box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.7);
-      animation: pulse-blue 2s infinite;
-      transition: transform 0.2s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      animation: none;
-      box-shadow: 0 8px 32px rgba(0,198,255,0.45);
-    }
-
-    .cta-btn:active {
-      transform: translateY(0);
-    }
-
-    @keyframes pulse-blue {
-      0%   { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.7); }
-      70%  { box-shadow: 0 0 0 16px rgba(0, 198, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
-    }
-
-    /* trust badges */
-    .trust {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin: 20px 0;
-    }
-
-    .trust-badge {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .trust-badge::before {
-      content: '✓';
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    /* disclaimer */
-    .disclaimer {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 10px;
-      padding: 14px 16px;
-      font-size: 11.5px;
-      color: var(--text-muted);
       line-height: 1.6;
-      margin-top: 24px;
-      text-align: left;
+      margin-bottom: 15px;
     }
 
-    /* footer links */
-    .footer-links {
-      margin-top: 20px;
-      font-size: 12px;
-      color: var(--text-muted);
+    .highlight {
+      color: #ffd700;
+      font-weight: bold;
     }
 
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .consent {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    .consent a {
-      color: var(--accent);
+    /* 🔥 PULSING BUTTON */
+    .btn {
+      background: #1877f2;
+      color: white;
+      padding: 16px 32px;
+      font-size: 18px;
+      border-radius: 12px;
+      display: inline-block;
       text-decoration: none;
+      margin-top: 25px;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 0 rgba(24,119,242,0.6);
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .urgency {
+      margin-top: 18px;
+      font-size: 15px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .trust {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-top: 25px;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
+      100% { box-shadow: 0 0 0 0 rgba(24,119,242,0); }
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px #ffd700; }
+      50% { box-shadow: 0 0 25px #ff6a00; }
+      100% { box-shadow: 0 0 10px #ffd700; }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
 
-<div class="card">
+  <div class="container">
 
-  <!-- Profile -->
-  <div class="avatar-ring">
-    <img src="profile.jpg" alt="Index Insight Hub">
+    <div class="image-wrapper">
+      <img src="profile.jpeg" alt="Mehta Profile Picture" class="profile-img">
+    </div>
+
+    <h1>
+      NAVJOT BRAR
+      <span class="verified">✔</span>
+    </h1>
+
+    <h2>
+      India’s Best Channel for 
+      <span class="highlight">#Nifty #BankNifty #Stocks</span>
+    </h2>
+
+    <p>
+      📈 Recover Your Trading Losses <br>
+      💰 Earn <strong>₹3K – ₹10K Daily</strong> <br><br>
+      🇮🇳 Trusted by Thousands of Indian Traders
+    </p>
+
+    <a href="https://t.me/+KJBIpnqfc6kwZmRl"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn"
+       onclick="fbq('track','Lead')">
+       👉 Join Our Telegram Channel
+    </a>
+
+    <div class="urgency">
+      ⏳ Limited Free Access – Join Before Market Opens
+    </div>
+
+    <div class="trust">
+      ✅ Free Calls <br>
+      ✅ Live Market Updates <br>
+      ✅ Beginner Friendly <br>
+      🔒 No Spam • 100% Transparency
+    </div>
+
+  </div> <div style="margin-top:20px; font-size:13px; opacity:0.8;">
+    🚀 Ads by Ajay Marketing Agency 
+    <a href="https://t.me/+tFb1G2lVALgyYzY1"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="color:#ffd700; text-decoration:none;">
+       Contact @Ajay_Ads
+    </a>
   </div>
-
-  <!-- Brand -->
-  <div class="brand">Navjot<span>Brar</span></div>
-  <div class="tagline">Stock Market Education</div>
-  <div class="divider"></div>
-
-  <!-- Features -->
-  <ul class="features">
-    <li>
-      <div class="icon">📊</div>
-      <div>
-        <strong>Technical Analysis</strong>
-        <span>Learn to read charts and understand price movements</span>
-      </div>
-    </li>
-    <li>
-      <div class="icon">📈</div>
-      <div>
-        <strong>Nifty & BankNifty Education</strong>
-        <span>Daily market breakdowns explained simply</span>
-      </div>
-    </li>
-    <li>
-      <div class="icon">🧠</div>
-      <div>
-        <strong>Build Analytical Skills</strong>
-        <span>Beginner-friendly content with no jargon</span>
-      </div>
-    </li>
-  </ul>
-
-  <!-- CTA -->
-  <a href="https://t.me/+KJBIpnqfc6kwZmRl"
-     target="_blank"
-     class="cta-btn"
-     onclick="fbq('track','Lead')">
-     JOIN TELEGRAM
-  </a>
-
-
-
-</div>
 
 </body>
 </html>
